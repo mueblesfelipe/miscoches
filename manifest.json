@@ -1,0 +1,15 @@
+{
+  "name": "Mis Coches",
+  "short_name": "Mis Coches",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/741/741407.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
