@@ -306,6 +306,9 @@
     function exportData() { const blob = new Blob([JSON.stringify(coches)], {type:'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `mis_coches.json`; a.click(); }
     function importData(input) { const r = new FileReader(); r.onload = e => { try { const data = JSON.parse(e.target.result); if(Array.isArray(data)) { coches = data; localStorage.setItem('misCoches', JSON.stringify(coches)); renderList(); } } catch(e){ alert("Error"); } }; r.readAsText(input.files[0]); }
     function deleteCoche() { if(confirm("¿Eliminar coche?")) { coches.splice(currentCocheIdx, 1); localStorage.setItem('misCoches', JSON.stringify(coches)); showView('view-list'); renderList(); } }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
 </script>
 </body>
 </html>
